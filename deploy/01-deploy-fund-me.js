@@ -27,6 +27,7 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
         from: deployer,
         args: args,
         log: true,
+        waitConfirmations: network.config.blockConfirmations || 1,
     })
     if (
         !developmentChains.includes(network.name) &&
@@ -38,3 +39,5 @@ module.exports = async ({ deployments, getNamedAccounts }) => {
 }
 
 module.exports.tags = ["all", "fundme"]
+
+// yarn hardhat deploy --network goerli
