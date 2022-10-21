@@ -19,5 +19,13 @@
     "hardhat-gas-reporter": "^1.0.7",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "solidity-coverage": "^0.8.2"
+  },
+  "scripts": {
+    "test": "yarn hardhat test",
+    "test:staging": "yarn hardhat test --network goerli",
+    "lint": "yarn solhint 'contracts/*.sol'",
+    "lint:fix": "yarn solhint 'contracts/*.sol' --fix",
+    "compile": "yarn hardhat compile",
+    "converage": "yarn hardhat coverage"
   }
 }
