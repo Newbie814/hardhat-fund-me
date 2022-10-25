@@ -66,8 +66,14 @@ contract FundMe {
 
     // fallback
 
+    // fallback() external payable {
+    //     fund();
+    // }
+
     fallback() external payable {
-        fund();
+        if (msg.value > 100) {
+            fund();
+        }
     }
 
     /**
